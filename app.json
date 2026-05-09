@@ -1,0 +1,42 @@
+{
+  "name": "VoiceMod Bot",
+  "description": "Telegram music bot for voice chats",
+  "keywords": ["telegram", "music", "voice", "pyrogram"],
+  "repository": "https://github.com/yourusername/voicemodbot",
+  "env": {
+    "API_ID": {
+      "description": "API ID from my.telegram.org",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "API Hash from my.telegram.org",
+      "required": true
+    },
+    "SESSION_STRING": {
+      "description": "Pyrogram session string",
+      "required": true
+    },
+    "CHAT_ID": {
+      "description": "Group chat ID",
+      "required": true
+    },
+    "ADMIN_ID": {
+      "description": "Your Telegram user ID",
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "Heroku/python"
+    },
+    {
+      "url": "https://github.com/coddrago/Heroku"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}
